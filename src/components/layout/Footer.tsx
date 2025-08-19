@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 import {
   Facebook,
   Instagram,
-  Twitter,
+  Linkedin,
   Mail,
   MapPin,
   Clock,
@@ -12,37 +12,36 @@ import {
 
 const Footer = () => {
   return (
-    <footer className="bg-slate-900 text-white py-12 px-4 md:px-8 lg:px-12">
+    <footer className="font-Negara bg-slate-900 text-white py-12 px-4 md:px-8 lg:px-12">
       <div className="container mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* Restaurant Info */}
           <div>
-            <h3 className="text-xl font-bold mb-4">Savory Bistro</h3>
+            <h3 className="font-raffishly text-5xl font-bold mb-4">Noctora</h3>
             <p className="text-slate-300 mb-4">
-              Exceptional dining experience with a focus on locally-sourced
-              ingredients and innovative cuisine.
+              Great food, good vibes, made with fresh local ingredients.
             </p>
             <div className="flex space-x-4">
               <a
-                href="#"
+                href="https://www.facebook.com/NullRaccoon/"
                 aria-label="Facebook"
                 className="hover:text-blue-400 transition-colors"
               >
                 <Facebook size={20} />
               </a>
               <a
-                href="#"
+                href="https://www.instagram.com/nullraccoontj/"
                 aria-label="Instagram"
                 className="hover:text-pink-400 transition-colors"
               >
                 <Instagram size={20} />
               </a>
               <a
-                href="#"
-                aria-label="Twitter"
+                href="https://www.linkedin.com/in/gustavotellodev/"
+                aria-label="LinkedIn"
                 className="hover:text-blue-500 transition-colors"
               >
-                <Twitter size={20} />
+                <Linkedin size={20} />
               </a>
             </div>
           </div>
@@ -80,11 +79,18 @@ const Footer = () => {
               <br />
               Gourmet City, GC 12345
             </address>
-            <div className="h-32 bg-slate-800 rounded-md overflow-hidden">
-              {/* Map placeholder */}
-              <div className="w-full h-full flex items-center justify-center text-sm text-slate-400">
-                Map Preview
-              </div>
+            {/* Google Maps Embed */}
+            <div className="max-w-4xl mx-auto rounded-lg overflow-hidden shadow-lg">
+              <iframe
+                title="Restaurant Location"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3389.428716734819!2d-117.04159868484711!3d32.51498668103162!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80d9237c1a2d4b5b%3A0x70f78a5c1e38e87b!2sTijuana%2C%20Baja%20California%2C%20Mexico!5e0!3m2!1sen!2sus!4v1692459724813!5m2!1sen!2sus"
+                width="100%"
+                height="200"
+                style={{ border: 0 }}
+                allowFullScreen={false}
+                loading="lazy"
+                className="rounded-lg"
+              ></iframe>
             </div>
           </div>
 
@@ -116,8 +122,7 @@ const Footer = () => {
 
         <div className="border-t border-slate-800 mt-8 pt-8 text-center text-slate-400 text-sm">
           <p>
-            &copy; {new Date().getFullYear()} Savory Bistro. All rights
-            reserved.
+            &copy; {new Date().getFullYear()} NullRacoon. All rights reserved.
           </p>
         </div>
       </div>

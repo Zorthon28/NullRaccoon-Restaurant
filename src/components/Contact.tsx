@@ -34,7 +34,7 @@ const Contact = () => {
   const [isSubmitted, setIsSubmitted] = useState(false);
 
   const handleInputChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
   ) => {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
@@ -325,9 +325,20 @@ const Contact = () => {
                   <h3 className="text-xl font-semibold text-gray-700 mb-2">
                     Interactive Map
                   </h3>
-                  <p className="text-gray-600 mb-4">
-                    Google Maps integration would be embedded here
-                  </p>
+                  {/* Google Maps Embed */}
+                  <div className="max-w-4xl mx-auto rounded-lg overflow-hidden shadow-lg">
+                    <iframe
+                      title="Restaurant Location"
+                      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3389.428716734819!2d-117.04159868484711!3d32.51498668103162!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80d9237c1a2d4b5b%3A0x70f78a5c1e38e87b!2sTijuana%2C%20Baja%20California%2C%20Mexico!5e0!3m2!1sen!2sus!4v1692459724813!5m2!1sen!2sus"
+                      width="100%"
+                      height="400"
+                      style={{ border: 0 }}
+                      allowFullScreen={false}
+                      loading="lazy"
+                      className="rounded-lg"
+                    ></iframe>
+                  </div>
+
                   <div className="bg-white rounded-lg p-4 inline-block shadow-md">
                     <p className="text-sm text-gray-700 font-medium">
                       123 Culinary Avenue
