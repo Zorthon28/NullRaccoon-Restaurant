@@ -12,7 +12,7 @@ import {
   Send,
   Facebook,
   Instagram,
-  Twitter,
+  Linkedin,
 } from "lucide-react";
 
 interface ContactFormData {
@@ -58,141 +58,164 @@ const Contact = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-[#111827] text-[#d1d5db]">
       <Navbar />
 
       {/* Hero Section */}
-      <div className="bg-gradient-to-r from-amber-600 to-amber-700 text-white py-16 relative overflow-hidden">
-        <div className="absolute inset-0 bg-black/10"></div>
-        <div className="relative container mx-auto px-4 text-center">
-          <h1 className="text-4xl md:text-5xl font-bold mb-4 tracking-tight">
+      <div className="relative py-24 text-center bg-gradient-to-r from-[#f59e0b] to-[#d97706] overflow-hidden">
+        <div className="absolute inset-0 bg-black/30"></div>
+        <div className="relative z-10 container mx-auto px-4">
+          <h1 className="text-[5rem] font-bold text-white mb-4 leading-[1.2]">
             Contact Us
           </h1>
-          <p className="text-xl opacity-90 max-w-2xl mx-auto leading-relaxed">
+          <p className="text-xl text-white/90 max-w-3xl mx-auto">
             We'd love to hear from you. Get in touch with us today.
           </p>
         </div>
       </div>
 
-      {/* Contact Information & Form */}
-      <div className="container mx-auto px-4 py-16">
+      {/* Contact Section */}
+      <div className="container mx-auto px-8 py-16 max-w-[1280px]">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-          {/* Contact Information */}
+          {/* Left - Info */}
           <div className="space-y-8">
-            <div>
-              <h2 className="text-3xl font-bold text-gray-900 mb-6">
-                Get in Touch
-              </h2>
-              <p className="text-gray-600 text-lg mb-8">
-                Whether you have questions about our menu, want to make a
-                reservation, or need information about private events, we're
-                here to help.
-              </p>
-            </div>
+            <h2 className="text-3xl font-bold text-white mb-4">Get in Touch</h2>
+            <p className="text-[#d1d5db] mb-6">
+              Whether you have questions about our menu, want to make a
+              reservation, or need information about private events, we're here
+              to help.
+            </p>
 
             {/* Contact Cards */}
             <div className="space-y-6">
-              <div className="bg-white rounded-lg shadow-md p-6 flex items-start space-x-4">
-                <div className="bg-amber-100 p-3 rounded-lg">
-                  <MapPin className="w-6 h-6 text-amber-600" />
-                </div>
-                <div>
-                  <h3 className="font-semibold text-gray-900 mb-2">Address</h3>
-                  <p className="text-gray-600">
-                    123 Culinary Avenue
-                    <br />
-                    Foodie District
-                    <br />
-                    Gourmet City, GC 12345
-                  </p>
-                </div>
-              </div>
-
-              <div className="bg-white rounded-lg shadow-md p-6 flex items-start space-x-4">
-                <div className="bg-amber-100 p-3 rounded-lg">
-                  <Phone className="w-6 h-6 text-amber-600" />
-                </div>
-                <div>
-                  <h3 className="font-semibold text-gray-900 mb-2">Phone</h3>
-                  <p className="text-gray-600">
-                    Main: (555) 123-4567
-                    <br />
-                    Reservations: (555) 123-4568
-                  </p>
-                </div>
-              </div>
-
-              <div className="bg-white rounded-lg shadow-md p-6 flex items-start space-x-4">
-                <div className="bg-amber-100 p-3 rounded-lg">
-                  <Mail className="w-6 h-6 text-amber-600" />
-                </div>
-                <div>
-                  <h3 className="font-semibold text-gray-900 mb-2">Email</h3>
-                  <p className="text-gray-600">
-                    General: info@savorybistro.com
-                    <br />
-                    Reservations: reservations@savorybistro.com
-                    <br />
-                    Events: events@savorybistro.com
-                  </p>
-                </div>
-              </div>
-
-              <div className="bg-white rounded-lg shadow-md p-6 flex items-start space-x-4">
-                <div className="bg-amber-100 p-3 rounded-lg">
-                  <Clock className="w-6 h-6 text-amber-600" />
-                </div>
-                <div>
-                  <h3 className="font-semibold text-gray-900 mb-2">Hours</h3>
-                  <div className="text-gray-600 space-y-1">
-                    <p>Monday - Thursday: 11:00 AM - 10:00 PM</p>
-                    <p>Friday - Saturday: 11:00 AM - 11:00 PM</p>
-                    <p>Sunday: 11:00 AM - 9:00 PM</p>
+              {[
+                {
+                  icon: MapPin,
+                  title: "Address",
+                  details: [
+                    "123 Culinary Avenue",
+                    "Foodie District",
+                    "Gourmet City, GC 12345",
+                  ],
+                },
+                {
+                  icon: Phone,
+                  title: "Phone",
+                  details: [
+                    "Main: (555) 123-4567",
+                    "Reservations: (555) 123-4568",
+                  ],
+                },
+                {
+                  icon: Mail,
+                  title: "Email",
+                  details: [
+                    "General: info@noctora.com",
+                    "Reservations: reservations@noctora.com",
+                    "Events: events@noctora.com",
+                  ],
+                },
+                {
+                  icon: Clock,
+                  title: "Hours",
+                  details: [
+                    "Mon - Thu: 11:00 AM - 10:00 PM",
+                    "Fri - Sat: 11:00 AM - 11:00 PM",
+                    "Sun: 11:00 AM - 9:00 PM",
+                  ],
+                },
+              ].map((item, idx) => (
+                <div
+                  key={idx}
+                  className="bg-gradient-to-br from-[#1f2937] to-[#111827] p-6 rounded-[1rem] shadow-[0_6px_20px_rgba(0,0,0,0.25)] flex items-start space-x-4 hover:transform hover:-translate-y-2 hover:scale-105 transition-all duration-500"
+                >
+                  <div className="bg-[#f59e0b]/20 p-3 rounded-lg flex-shrink-0">
+                    <item.icon className="w-6 h-6 text-[#f59e0b]" />
+                  </div>
+                  <div>
+                    <h3 className="font-semibold text-white mb-1">
+                      {item.title}
+                    </h3>
+                    <div className="text-[#d1d5db] space-y-1">
+                      {item.details.map((d, i) => (
+                        <p key={i}>{d}</p>
+                      ))}
+                    </div>
                   </div>
                 </div>
-              </div>
+              ))}
             </div>
 
             {/* Social Media */}
-            <div className="bg-white rounded-lg shadow-md p-6">
-              <h3 className="font-semibold text-gray-900 mb-4">Follow Us</h3>
-              <div className="flex space-x-4">
-                <a
-                  href="#"
-                  className="bg-blue-600 text-white p-3 rounded-lg hover:bg-blue-700 transition-colors"
-                  aria-label="Facebook"
-                >
-                  <Facebook className="w-5 h-5" />
-                </a>
-                <a
-                  href="#"
-                  className="bg-pink-600 text-white p-3 rounded-lg hover:bg-pink-700 transition-colors"
-                  aria-label="Instagram"
-                >
-                  <Instagram className="w-5 h-5" />
-                </a>
-                <a
-                  href="#"
-                  className="bg-blue-400 text-white p-3 rounded-lg hover:bg-blue-500 transition-colors"
-                  aria-label="Twitter"
-                >
-                  <Twitter className="w-5 h-5" />
-                </a>
-              </div>
+            {/* Social Media */}
+            <div className="flex space-x-4 mt-4">
+              <a
+                href="https://www.facebook.com/NullRaccoon/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="p-3 rounded-lg text-white flex items-center justify-center transition-all"
+                style={{ backgroundColor: "#3b5998" }}
+                onMouseEnter={(e) =>
+                  ((e.target as HTMLAnchorElement).style.backgroundColor =
+                    "#334f88")
+                }
+                onMouseLeave={(e) =>
+                  ((e.target as HTMLAnchorElement).style.backgroundColor =
+                    "#3b5998")
+                }
+              >
+                <Facebook className="w-5 h-5" />
+              </a>
+
+              <a
+                href="https://www.instagram.com/nullraccoontj/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="p-3 rounded-lg text-white flex items-center justify-center transition-all"
+                style={{ backgroundColor: "#e1306c" }}
+                onMouseEnter={(e) =>
+                  ((e.target as HTMLAnchorElement).style.backgroundColor =
+                    "#c1275a")
+                }
+                onMouseLeave={(e) =>
+                  ((e.target as HTMLAnchorElement).style.backgroundColor =
+                    "#e1306c")
+                }
+              >
+                <Instagram className="w-5 h-5" />
+              </a>
+
+              <a
+                href="https://www.linkedin.com/in/gustavotellodev/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="p-3 rounded-lg text-white flex items-center justify-center transition-all"
+                style={{ backgroundColor: "#1da1f2" }}
+                onMouseEnter={(e) =>
+                  ((e.target as HTMLAnchorElement).style.backgroundColor =
+                    "#0d95e8")
+                }
+                onMouseLeave={(e) =>
+                  ((e.target as HTMLAnchorElement).style.backgroundColor =
+                    "#1da1f2")
+                }
+              >
+                <Linkedin className="w-5 h-5" />
+              </a>
             </div>
           </div>
 
-          {/* Contact Form */}
-          <div className="bg-white rounded-lg shadow-lg p-8">
-            <h2 className="text-2xl font-bold text-gray-900 mb-6">
+          {/* Right - Form */}
+          <div className="bg-gradient-to-br from-[#1f2937] to-[#111827] rounded-[1rem] p-8 shadow-[0_10px_30px_rgba(0,0,0,0.3)]">
+            <h2 className="text-2xl font-bold text-white mb-6">
               Send us a Message
             </h2>
 
             {isSubmitted ? (
               <div className="text-center py-8">
-                <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                <div className="w-16 h-16 bg-green-500/20 rounded-full flex items-center justify-center mx-auto mb-4 animate-pulse">
                   <svg
-                    className="w-8 h-8 text-green-600"
+                    className="w-8 h-8 text-green-400"
                     fill="none"
                     stroke="currentColor"
                     viewBox="0 0 24 24"
@@ -205,10 +228,10 @@ const Contact = () => {
                     />
                   </svg>
                 </div>
-                <h3 className="text-xl font-semibold text-gray-900 mb-2">
+                <h3 className="text-xl font-semibold text-white mb-2">
                   Message Sent!
                 </h3>
-                <p className="text-gray-600">
+                <p className="text-[#d1d5db]">
                   Thank you for contacting us. We'll get back to you soon.
                 </p>
               </div>
@@ -216,74 +239,59 @@ const Contact = () => {
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   <div>
-                    <label
-                      htmlFor="name"
-                      className="block text-sm font-medium text-gray-700 mb-2"
-                    >
+                    <label className="block mb-2 text-[#d1d5db] font-medium">
                       Name *
                     </label>
                     <Input
-                      id="name"
                       name="name"
-                      type="text"
                       value={formData.name}
                       onChange={handleInputChange}
                       placeholder="Your full name"
+                      className="bg-white/10 text-white placeholder-white/70 border border-white/50 rounded-[0.75rem] p-4 focus:bg-white/20 focus:border-[#f59e0b]"
                       required
                     />
                   </div>
-
                   <div>
-                    <label
-                      htmlFor="email"
-                      className="block text-sm font-medium text-gray-700 mb-2"
-                    >
+                    <label className="block mb-2 text-[#d1d5db] font-medium">
                       Email *
                     </label>
                     <Input
-                      id="email"
                       name="email"
                       type="email"
                       value={formData.email}
                       onChange={handleInputChange}
                       placeholder="your.email@example.com"
+                      className="bg-white/10 text-white placeholder-white/70 border border-white/50 rounded-[0.75rem] p-4 focus:bg-white/20 focus:border-[#f59e0b]"
                       required
                     />
                   </div>
                 </div>
 
                 <div>
-                  <label
-                    htmlFor="subject"
-                    className="block text-sm font-medium text-gray-700 mb-2"
-                  >
+                  <label className="block mb-2 text-[#d1d5db] font-medium">
                     Subject *
                   </label>
                   <Input
-                    id="subject"
                     name="subject"
-                    type="text"
                     value={formData.subject}
                     onChange={handleInputChange}
                     placeholder="What is this regarding?"
+                    className="bg-white/10 text-white placeholder-white/70 border border-white/50 rounded-[0.75rem] p-4 focus:bg-white/20 focus:border-[#f59e0b]"
                     required
                   />
                 </div>
 
                 <div>
-                  <label
-                    htmlFor="message"
-                    className="block text-sm font-medium text-gray-700 mb-2"
-                  >
+                  <label className="block mb-2 text-[#d1d5db] font-medium">
                     Message *
                   </label>
                   <Textarea
-                    id="message"
                     name="message"
                     value={formData.message}
                     onChange={handleInputChange}
                     placeholder="Tell us more about your inquiry..."
                     rows={6}
+                    className="bg-white/10 text-white placeholder-white/70 border border-white/50 rounded-[0.75rem] p-4 focus:bg-white/20 focus:border-[#f59e0b]"
                     required
                   />
                 </div>
@@ -291,7 +299,7 @@ const Contact = () => {
                 <Button
                   type="submit"
                   disabled={isSubmitting}
-                  className="w-full bg-amber-600 hover:bg-amber-700 text-white py-3 text-lg font-medium flex items-center justify-center space-x-2"
+                  className="w-full bg-gradient-to-r from-[#f59e0b] to-[#d97706] text-white py-3 rounded-[0.75rem] font-semibold shadow-md flex items-center justify-center space-x-2 hover:scale-105 transition"
                 >
                   <Send className="w-5 h-5" />
                   <span>{isSubmitting ? "Sending..." : "Send Message"}</span>
@@ -303,67 +311,57 @@ const Contact = () => {
       </div>
 
       {/* Map Section */}
-      <div className="bg-white py-16">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-8">
-            <h2 className="text-3xl font-bold text-gray-900 mb-4">Find Us</h2>
-            <p className="text-gray-600 max-w-2xl mx-auto">
-              Located in the heart of the Foodie District, we're easily
-              accessible by car or public transportation.
+      <div className="container mx-auto px-8 py-16 max-w-[1280px]">
+        <div className="text-center mb-8">
+          <h2 className="text-3xl font-bold text-white mb-4">Find Us</h2>
+          <p className="text-[#d1d5db] max-w-3xl mx-auto">
+            Located in the heart of the Foodie District, we're easily accessible
+            by car or public transportation.
+          </p>
+        </div>
+
+        {/* Google Maps Placeholder */}
+        <div className="bg-gradient-to-br from-[#1f2937] to-[#111827] rounded-[1rem] shadow-[0_10px_30px_rgba(0,0,0,0.3)] overflow-hidden h-[400px] flex items-center justify-center">
+          <div className="text-center">
+            <MapPin className="w-16 h-16 text-[#f59e0b] mx-auto mb-4" />
+            <h3 className="text-xl font-semibold text-white mb-2">
+              Interactive Map
+            </h3>
+            <p className="text-[#d1d5db] mb-4">
+              Google Maps integration would be embedded here
             </p>
+            <div className="bg-[#1f2937] rounded-lg p-4 inline-block shadow-md">
+              <p className="text-sm text-[#f59e0b] font-medium">
+                123 Culinary Avenue
+              </p>
+              <p className="text-sm text-[#d1d5db]">
+                Foodie District, Gourmet City, GC 12345
+              </p>
+            </div>
           </div>
+        </div>
 
-          {/* Google Maps Placeholder */}
-          <div className="max-w-4xl mx-auto">
+        {/* Directions */}
+        <div className="mt-8 grid grid-cols-1 md:grid-cols-3 gap-4">
+          {[
+            { title: "By Car", info: "Free valet parking available" },
+            {
+              title: "Public Transit",
+              info: "Metro Station: Culinary Square (2 blocks)",
+            },
+            {
+              title: "Walking",
+              info: "Pedestrian-friendly area with sidewalks",
+            },
+          ].map((d, idx) => (
             <div
-              className="bg-gray-200 rounded-lg overflow-hidden shadow-lg"
-              style={{ height: "400px" }}
+              key={idx}
+              className="bg-gradient-to-br from-[#1f2937] to-[#111827] rounded-[1rem] p-4 text-center shadow-[0_6px_20px_rgba(0,0,0,0.25)] hover:scale-105 transition"
             >
-              <div className="w-full h-full flex items-center justify-center bg-gradient-to-br from-gray-300 to-gray-400">
-                <div className="text-center">
-                  <MapPin className="w-16 h-16 text-gray-600 mx-auto mb-4" />
-                  <h3 className="text-xl font-semibold text-gray-700 mb-2">
-                    Interactive Map
-                  </h3>
-                  <p className="text-gray-600 mb-4">
-                    Google Maps integration would be embedded here
-                  </p>
-                  <div className="bg-white rounded-lg p-4 inline-block shadow-md">
-                    <p className="text-sm text-gray-700 font-medium">
-                      123 Culinary Avenue
-                    </p>
-                    <p className="text-sm text-gray-600">
-                      Foodie District, Gourmet City, GC 12345
-                    </p>
-                  </div>
-                </div>
-              </div>
+              <h4 className="font-semibold text-[#f59e0b] mb-2">{d.title}</h4>
+              <p className="text-[#d1d5db] text-sm">{d.info}</p>
             </div>
-
-            {/* Directions */}
-            <div className="mt-6 grid grid-cols-1 md:grid-cols-3 gap-4">
-              <div className="bg-amber-50 rounded-lg p-4 text-center">
-                <h4 className="font-semibold text-amber-800 mb-2">By Car</h4>
-                <p className="text-sm text-amber-700">
-                  Free valet parking available
-                </p>
-              </div>
-              <div className="bg-amber-50 rounded-lg p-4 text-center">
-                <h4 className="font-semibold text-amber-800 mb-2">
-                  Public Transit
-                </h4>
-                <p className="text-sm text-amber-700">
-                  Metro Station: Culinary Square (2 blocks)
-                </p>
-              </div>
-              <div className="bg-amber-50 rounded-lg p-4 text-center">
-                <h4 className="font-semibold text-amber-800 mb-2">Walking</h4>
-                <p className="text-sm text-amber-700">
-                  Pedestrian-friendly area with sidewalks
-                </p>
-              </div>
-            </div>
-          </div>
+          ))}
         </div>
       </div>
 
