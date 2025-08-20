@@ -17,7 +17,7 @@ interface MenuItemCardProps {
   item: MenuItem;
 }
 
-const MenuItemCard = ({ item }: MenuItemCardCardProps) => {
+const MenuItemCard = ({ item }: MenuItemCardProps) => {
   return (
     <Card className="overflow-hidden h-full border-0 bg-gradient-to-br from-[#1f2937] to-[#111827] text-white rounded-[1rem] shadow-[0_6px_20px_rgba(0,0,0,0.25)] transition-all duration-500 hover:translate-y-[-8px] hover:scale-[1.02] hover:shadow-[0_10px_30px_rgba(0,0,0,0.3)]">
       <div className="aspect-[4/3] w-full overflow-hidden relative">
@@ -204,7 +204,7 @@ const Menu = () => {
       <section className="relative py-[6rem] px-[2rem] text-center bg-[#111827] animate-fadeIn">
         <div className="absolute inset-0 z-0 opacity-60">
           <img
-            src="https://images.unsplash.com/photo-1543372295-46805b53b811?q=80&w=2670&auto=format&fit=crop"
+            src="images/HeroCover.png"
             alt="Restaurant interior"
             className="w-full h-full object-cover"
           />
