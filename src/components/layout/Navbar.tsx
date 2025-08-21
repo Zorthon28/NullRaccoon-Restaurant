@@ -14,7 +14,6 @@ const Navbar = ({
     { title: "Menu", href: "/menu" },
     { title: "Reservations", href: "/reservations" },
     { title: "Contact", href: "/contact" },
-    { title: "Gallery", href: "/gallery" },
   ],
 }: NavbarProps) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
