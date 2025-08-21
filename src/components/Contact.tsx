@@ -13,6 +13,8 @@ import {
   Facebook,
   Instagram,
   Linkedin,
+  BusFront,
+  Footprints,
 } from "lucide-react";
 
 interface ContactFormData {
@@ -342,26 +344,44 @@ const Contact = () => {
         </div>
 
         {/* Directions */}
-        <div className="mt-8 grid grid-cols-1 md:grid-cols-3 gap-4">
-          {[
-            { title: "By Car", info: "Free valet parking available" },
-            {
-              title: "Public Transit",
-              info: "Metro Station: Culinary Square (2 blocks)",
-            },
-            {
-              title: "Walking",
-              info: "Pedestrian-friendly area with sidewalks",
-            },
-          ].map((d, idx) => (
-            <div
-              key={idx}
-              className="bg-gradient-to-br from-[#1f2937] to-[#111827] rounded-[1rem] p-4 text-center shadow-[0_6px_20px_rgba(0,0,0,0.25)] hover:scale-105 transition"
-            >
-              <h4 className="font-semibold text-[#f59e0b] mb-2">{d.title}</h4>
-              <p className="text-[#d1d5db] text-sm">{d.info}</p>
-            </div>
-          ))}
+        <div className="mt-12">
+          <h2 className="text-3xl font-bold text-white text-center mb-8">
+            Getting Here
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {[
+              {
+                title: "By Car",
+                info: "We offer complimentary valet parking at our main entrance. Nearby street parking is also available.",
+                icon: MapPin,
+              },
+              {
+                title: "Public Transit",
+                info: "Take Metro Line 2 to Culinary Square Station, just a 5-minute walk from our doors. Several bus routes also stop nearby.",
+                icon: BusFront, // you’ll need to import from lucide-react
+              },
+              {
+                title: "Walking",
+                info: "Located in a pedestrian-friendly area with wide sidewalks and plenty of crosswalks for easy access.",
+                icon: Footprints, // import from lucide-react
+              },
+            ].map((d, idx) => (
+              <div
+                key={idx}
+                className="bg-gradient-to-br from-[#1f2937] to-[#111827] rounded-[1rem] p-6 shadow-[0_6px_20px_rgba(0,0,0,0.25)] text-center hover:scale-105 hover:shadow-lg transition-all"
+              >
+                <div className="bg-[#f59e0b]/20 p-4 rounded-full flex items-center justify-center w-16 h-16 mx-auto mb-4">
+                  <d.icon className="w-8 h-8 text-[#f59e0b]" />
+                </div>
+                <h4 className="font-semibold text-xl text-white mb-2">
+                  {d.title}
+                </h4>
+                <p className="text-[#d1d5db] text-sm leading-relaxed">
+                  {d.info}
+                </p>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
 
