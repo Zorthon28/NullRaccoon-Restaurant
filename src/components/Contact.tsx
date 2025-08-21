@@ -322,66 +322,51 @@ const Contact = () => {
           </p>
         </div>
 
-        {/* Google Maps Placeholder */}
-        <div className="bg-gradient-to-br from-[#1f2937] to-[#111827] rounded-[1rem] shadow-[0_10px_30px_rgba(0,0,0,0.3)] overflow-hidden h-[400px] flex items-center justify-center">
-          <div className="text-center">
-            <MapPin className="w-16 h-16 text-[#f59e0b] mx-auto mb-4" />
-            <h3 className="text-xl font-semibold text-white mb-2">
-              Interactive Map
-            </h3>
-            <p className="text-[#d1d5db] mb-4">
-              Google Maps integration would be embedded here
-            </p>
-            <div className="bg-[#1f2937] rounded-lg p-4 inline-block shadow-md">
-              <p className="text-sm text-[#f59e0b] font-medium">
-                123 Culinary Avenue
-              </p>
-              <p className="text-sm text-[#d1d5db]">
-                Foodie District, Gourmet City, GC 12345
-              </p>
-            </div>
-          </div>
+        {/* Google Maps Embed */}
+        <div className="rounded-[1rem] overflow-hidden shadow-[0_10px_30px_rgba(0,0,0,0.3)] h-[400px] mb-8">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3153.019170845938!2d-122.41941518468107!3d37.77492927975927!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8085808d3f94c6e1%3A0x2d2d2a0f6a6f25a2!2s123%20Culinary%20Avenue%2C%20Gourmet%20City!5e0!3m2!1sen!2sus!4v1697723456789!5m2!1sen!2sus"
+            width="100%"
+            height="100%"
+            style={{ border: 0 }}
+            allowFullScreen={true}
+            loading="lazy"
+            referrerPolicy="no-referrer-when-downgrade"
+          ></iframe>
         </div>
 
         {/* Directions */}
-        <div className="mt-12">
-          <h2 className="text-3xl font-bold text-white text-center mb-8">
-            Getting Here
-          </h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {[
-              {
-                title: "By Car",
-                info: "We offer complimentary valet parking at our main entrance. Nearby street parking is also available.",
-                icon: MapPin,
-              },
-              {
-                title: "Public Transit",
-                info: "Take Metro Line 2 to Culinary Square Station, just a 5-minute walk from our doors. Several bus routes also stop nearby.",
-                icon: BusFront, // you’ll need to import from lucide-react
-              },
-              {
-                title: "Walking",
-                info: "Located in a pedestrian-friendly area with wide sidewalks and plenty of crosswalks for easy access.",
-                icon: Footprints, // import from lucide-react
-              },
-            ].map((d, idx) => (
-              <div
-                key={idx}
-                className="bg-gradient-to-br from-[#1f2937] to-[#111827] rounded-[1rem] p-6 shadow-[0_6px_20px_rgba(0,0,0,0.25)] text-center hover:scale-105 hover:shadow-lg transition-all"
-              >
-                <div className="bg-[#f59e0b]/20 p-4 rounded-full flex items-center justify-center w-16 h-16 mx-auto mb-4">
-                  <d.icon className="w-8 h-8 text-[#f59e0b]" />
-                </div>
-                <h4 className="font-semibold text-xl text-white mb-2">
-                  {d.title}
-                </h4>
-                <p className="text-[#d1d5db] text-sm leading-relaxed">
-                  {d.info}
-                </p>
+        <div className="mt-8 grid grid-cols-1 md:grid-cols-3 gap-6">
+          {[
+            {
+              title: "By Car",
+              info: "We offer complimentary valet parking at our main entrance. Nearby street parking is also available.",
+              icon: MapPin,
+            },
+            {
+              title: "Public Transit",
+              info: "Take Metro Line 2 to Culinary Square Station, just a 5-minute walk from our doors. Several bus routes also stop nearby.",
+              icon: BusFront,
+            },
+            {
+              title: "Walking",
+              info: "Located in a pedestrian-friendly area with wide sidewalks and plenty of crosswalks for easy access.",
+              icon: Footprints,
+            },
+          ].map((d, idx) => (
+            <div
+              key={idx}
+              className="bg-gradient-to-br from-[#1f2937] to-[#111827] rounded-[1rem] p-6 shadow-[0_6px_20px_rgba(0,0,0,0.25)] text-center hover:scale-105 hover:shadow-lg transition-all"
+            >
+              <div className="bg-[#f59e0b]/20 p-4 rounded-full flex items-center justify-center w-16 h-16 mx-auto mb-4">
+                <d.icon className="w-8 h-8 text-[#f59e0b]" />
               </div>
-            ))}
-          </div>
+              <h4 className="font-semibold text-xl text-white mb-2">
+                {d.title}
+              </h4>
+              <p className="text-[#d1d5db] text-sm leading-relaxed">{d.info}</p>
+            </div>
+          ))}
         </div>
       </div>
 

@@ -2,7 +2,6 @@ import { Suspense } from "react";
 import { useRoutes, Routes, Route } from "react-router-dom";
 import Home from "./components/home";
 import Menu from "./components/Menu";
-import Gallery from "./components/Gallery";
 import Reservations from "./components/Reservations";
 import Contact from "./components/Contact";
 import routes from "tempo-routes";
