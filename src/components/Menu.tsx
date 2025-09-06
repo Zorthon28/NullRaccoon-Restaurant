@@ -1,6 +1,8 @@
 import React, { useState } from "react";
+import { useEffect, useRef } from "react";
 import { Card, CardContent } from "./ui/card";
 import { Button } from "./ui/button";
+import { QRCode } from "react-qrcode-logo";
 import Navbar from "./layout/Navbar";
 import Footer from "./layout/Footer";
 
@@ -262,16 +264,38 @@ const Menu = () => {
               <div className="w-48 h-48 bg-[#1f2937] rounded-lg flex items-center justify-center mb-4">
                 <div className="text-center">
                   <div className="w-32 h-32 bg-white p-2 rounded-lg mb-2 mx-auto flex items-center justify-center">
-                    <div className="grid grid-cols-8 gap-1">
-                      {Array.from({ length: 64 }).map((_, i) => (
-                        <div
-                          key={i}
-                          className={`w-1 h-1 ${
-                            Math.random() > 0.5 ? "bg-black" : "bg-gray-400"
-                          }`}
-                        />
-                      ))}
-                    </div>
+                    <QRCode
+                      value="https://restaurant.nullraccoon.com/Nullraccoon-Noctora.pdf" // Your menu URL
+                      options={{
+                        type: "svg",
+                        width: 128, // Adjust as needed, fits the w-32 h-32 container (128px)
+                        height: 128, // Adjust as needed
+                        image:
+                          "https://upload.wikimedia.org/wikipedia/commons/4/47/React.svg", // Replace with your logo URL
+                        dotsOptions: {
+                          color: "#6a0dad", // A nice purple color
+                          type: "rounded", // Rounded dots
+                          gradient: {
+                            type: "radial",
+                            rotation: 0,
+                            colorStops: [
+                              { offset: 0, color: "#a78bfa" }, // Light purple
+                              { offset: 1, color: "#6a0dad" }, // Dark purple
+                            ],
+                          },
+                        },
+                        cornersSquareOptions: {
+                          color: "#a78bfa", // Purple for the corner squares
+                          type: "extra-rounded", // Extra rounded corners for the position markers
+                        },
+                        cornersDotOptions: {
+                          color: "#6a0dad", // Darker purple for the dots in the corner squares
+                        },
+                        backgroundOptions: {
+                          color: "#ffffff", // White background for the QR code
+                        },
+                      }}
+                    />
                   </div>
                   <p className="text-xs text-[#d1d5db] font-medium">
                     QR Menu Code
