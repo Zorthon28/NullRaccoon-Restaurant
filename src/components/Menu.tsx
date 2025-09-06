@@ -263,40 +263,37 @@ const Menu = () => {
             <div className="bg-[#1f2937] p-6 rounded-xl shadow-lg border-2 border-[#1f2937]">
               <div className="w-48 h-48 bg-[#1f2937] rounded-lg flex items-center justify-center mb-4">
                 <div className="text-center">
-                  <div className="w-32 h-32 bg-white p-2 rounded-lg mb-2 mx-auto flex items-center justify-center">
-                    <QRCode
-                      value="https://restaurant.nullraccoon.com/Nullraccoon-Noctora.pdf" // Your menu URL
-                      options={{
-                        type: "svg",
-                        width: 128, // Adjust as needed, fits the w-32 h-32 container (128px)
-                        height: 128, // Adjust as needed
-                        image:
-                          "https://upload.wikimedia.org/wikipedia/commons/4/47/React.svg", // Replace with your logo URL
-                        dotsOptions: {
-                          color: "#6a0dad", // A nice purple color
-                          type: "rounded", // Rounded dots
-                          gradient: {
-                            type: "radial",
-                            rotation: 0,
-                            colorStops: [
-                              { offset: 0, color: "#a78bfa" }, // Light purple
-                              { offset: 1, color: "#6a0dad" }, // Dark purple
-                            ],
-                          },
-                        },
-                        cornersSquareOptions: {
-                          color: "#a78bfa", // Purple for the corner squares
-                          type: "extra-rounded", // Extra rounded corners for the position markers
-                        },
-                        cornersDotOptions: {
-                          color: "#6a0dad", // Darker purple for the dots in the corner squares
-                        },
-                        backgroundOptions: {
-                          color: "#ffffff", // White background for the QR code
-                        },
-                      }}
-                    />
-                  </div>
+                  <QRCode
+                    value="https://restaurant.nullraccoon.com/Nullraccoon-Noctora.pdf"
+                    size={160}
+                    ecLevel="H"
+                    bgColor="transparent" // Transparent background
+                    fgColor="#ffffff" // White QR modules for contrast on dark background
+                    qrStyle="fluid" // Smooth, modern look
+                    quietZone={16}
+                    // Logo settings
+                    logoImage="images/logo/trace.svg"
+                    logoWidth={48}
+                    logoHeight={48}
+                    logoOpacity={0.95}
+                    logoPadding={6}
+                    logoPaddingStyle="circle"
+                    logoPaddingRadius={24}
+                    // Eye settings
+                    eyeColor={[
+                      { outer: "#00b0ff", inner: "#00b0ff" }, // Bright blue eyes stand out on dark background
+                      { outer: "#00b0ff", inner: "#00b0ff" },
+                      { outer: "#00b0ff", inner: "#00b0ff" },
+                    ]}
+                    eyeRadius={[
+                      { outer: 6, inner: 3 },
+                      { outer: 6, inner: 3 },
+                      { outer: 6, inner: 3 },
+                    ]}
+                    style={{
+                      filter: "drop-shadow(0 2px 6px rgba(0,0,0,0.4))",
+                    }} // Adds subtle depth on dark backgrounds
+                  />
                   <p className="text-xs text-[#d1d5db] font-medium">
                     QR Menu Code
                   </p>
