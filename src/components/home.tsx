@@ -120,8 +120,7 @@ const HomePage = () => {
       description:
         "Pappardelle with roasted poblano cream sauce and grilled chicken",
       price: "$22",
-      imageUrl:
-        "https://images.unsplash.com/photo-1627308595229-7830a5c91f9f?w=800&q=80",
+      imageUrl: "images/Food/mexican-italian-pasta.png",
     },
   ];
 

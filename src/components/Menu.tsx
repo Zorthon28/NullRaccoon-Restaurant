@@ -3,6 +3,7 @@ import { useEffect, useRef } from "react";
 import { Card, CardContent } from "./ui/card";
 import { Button } from "./ui/button";
 import { QRCode } from "react-qrcode-logo";
+import { QRWithButton } from "./ui/qrbutton"; // ShadCN Button import
 import Navbar from "./layout/Navbar";
 import Footer from "./layout/Footer";
 
@@ -263,45 +264,48 @@ const Menu = () => {
             <div className="bg-[#1f2937] p-6 rounded-xl shadow-lg border-2 border-[#1f2937]">
               <div className="w-48 h-48 bg-[#1f2937] rounded-lg flex items-center justify-center mb-4">
                 <div className="text-center">
-                  <QRCode
-                    value="https://restaurant.nullraccoon.com/Nullraccoon-Noctora.pdf"
-                    size={160}
-                    ecLevel="H"
-                    bgColor="transparent" // Transparent background
-                    fgColor="#ffffff" // White QR modules for contrast on dark background
-                    qrStyle="fluid" // Smooth, modern look
-                    quietZone={16}
-                    // Logo settings
-                    logoImage="images/logo/trace.svg"
-                    logoWidth={48}
-                    logoHeight={48}
-                    logoOpacity={0.95}
-                    logoPadding={6}
-                    logoPaddingStyle="circle"
-                    logoPaddingRadius={24}
-                    // Eye settings
-                    eyeColor={[
-                      { outer: "#00b0ff", inner: "#00b0ff" }, // Bright blue eyes stand out on dark background
-                      { outer: "#00b0ff", inner: "#00b0ff" },
-                      { outer: "#00b0ff", inner: "#00b0ff" },
-                    ]}
-                    eyeRadius={[
-                      { outer: 6, inner: 3 },
-                      { outer: 6, inner: 3 },
-                      { outer: 6, inner: 3 },
-                    ]}
-                    style={{
-                      filter: "drop-shadow(0 2px 6px rgba(0,0,0,0.4))",
-                    }} // Adds subtle depth on dark backgrounds
-                  />
-                  <p className="text-xs text-[#d1d5db] font-medium">
-                    QR Menu Code
+                  {/* Wrap QR in a clickable link */}
+                  <a
+                    href="https://restaurant.nullraccoon.com/Nullraccoon-Noctora.pdf"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <QRCode
+                      value="https://restaurant.nullraccoon.com/Nullraccoon-Noctora.pdf"
+                      size={160}
+                      ecLevel="H"
+                      bgColor="transparent"
+                      fgColor="#ffffff"
+                      qrStyle="fluid"
+                      quietZone={16}
+                      logoImage="images/logo/trace.svg"
+                      logoWidth={48}
+                      logoHeight={48}
+                      logoOpacity={0.95}
+                      logoPadding={6}
+                      logoPaddingStyle="circle"
+                      logoPaddingRadius={24}
+                      eyeColor={[
+                        { outer: "#00b0ff", inner: "#00b0ff" },
+                        { outer: "#00b0ff", inner: "#00b0ff" },
+                        { outer: "#00b0ff", inner: "#00b0ff" },
+                      ]}
+                      eyeRadius={[
+                        { outer: 6, inner: 3 },
+                        { outer: 6, inner: 3 },
+                        { outer: 6, inner: 3 },
+                      ]}
+                      style={{
+                        filter: "drop-shadow(0 2px 6px rgba(0,0,0,0.4))",
+                        cursor: "pointer", // Makes it clear it's clickable
+                      }}
+                    />
+                  </a>
+                  <p className="text-xs text-[#d1d5db] font-medium mt-2">
+                    Scan with your camera or click the QR code
                   </p>
                 </div>
               </div>
-              <p className="text-sm font-medium text-[#d1d5db]">
-                Scan with your camera
-              </p>
             </div>
 
             {/* Features */}
